@@ -7,8 +7,9 @@ dotenv grammar or populate process.env.
 
 Use Node 22.13+ (22.x) or Node 24+. Run `npm ci --ignore-scripts`, `npm test`,
 `npm run lint`, `npm run check`, `npm audit`, and `npm run smoke`. The smoke test
-packs and installs the real tarball in a temporary directory, runs examples and
-uninstalls. Keep the one runtime dependency pinned; update its lockfile deliberately
+packs the real tarball, explicitly prepares an initially empty private npm cache
+with the exact dependency (network required), installs offline, runs examples and
+uninstalls offline. Keep the one runtime dependency pinned; update its lockfile deliberately
 and rerun actual engine conformance fixtures.
 
 Changes must preserve default value/key non-disclosure and incomplete-run errors.

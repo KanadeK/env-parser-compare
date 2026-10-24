@@ -165,8 +165,10 @@ Tests use the real native and dotenv APIs as independent oracles, cover complete
 CLI outcomes, privacy, expected keys, timeouts, input limits, BOM/CRLF, duplicate
 and prototype-like names. ESLint checks code quality; Node checks every JS file's
 syntax. The smoke test packs the **real release tarball**, installs it in a new
-directory offline using the dependency cache populated by `npm ci`, runs all
-three examples through the installed CLI, then uninstalls. CI covers Linux and
+directory using a dedicated, initially empty npm cache. It first fetches the exact
+dotenv dependency's metadata and tarball with `npm cache add` (requires network),
+then installs offline, runs all three examples through the installed CLI and
+uninstalls offline. It does not assume `npm ci` cached registry metadata. CI covers Linux and
 Windows with Node 22 and 24; its token has read-only repository access.
 
 Uninstall the global command with `npm uninstall --global env-parser-compare`, or
