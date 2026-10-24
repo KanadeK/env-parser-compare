@@ -1,0 +1,56 @@
+{
+  "name": "env-parser-compare",
+  "version": "0.1.0",
+  "description": "Compare actual Node native and dotenv parsing with value-free migration reports",
+  "type": "module",
+  "license": "MIT",
+  "author": "KanadeK",
+  "engines": {
+    "node": "^22.13.0 || >=24"
+  },
+  "bin": {
+    "env-parser-compare": "bin/env-parser-compare.mjs"
+  },
+  "exports": "./src/compare.mjs",
+  "files": [
+    "bin",
+    "src",
+    "examples",
+    "README.md",
+    "README.zh-CN.md",
+    "LICENSE",
+    "THIRD_PARTY.md",
+    "SECURITY.md",
+    "CHANGELOG.md",
+    "RELEASE_NOTES.md",
+    "CONTRIBUTING.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KanadeK/env-parser-compare.git"
+  },
+  "bugs": {
+    "url": "https://github.com/KanadeK/env-parser-compare/issues"
+  },
+  "keywords": [
+    "dotenv",
+    "nodejs",
+    "configuration",
+    "migration",
+    "cli"
+  ],
+  "scripts": {
+    "test": "node --test",
+    "check": "node scripts/check-source.mjs",
+    "lint": "eslint .",
+    "smoke": "node scripts/smoke-install.mjs"
+  },
+  "dependencies": {
+    "dotenv": "18.0.9"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "eslint": "10.13.0",
+    "globals": "17.13.0"
+  }
+}
